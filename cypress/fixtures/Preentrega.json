@@ -1,0 +1,14 @@
+{
+    "productos": {
+        "primerProducto": {
+            "nombre": "Buzo Negro",
+            "precioUnitario": 23.76,
+            "quantity": 2
+        },
+        "segundoProducto": {
+            "nombre": "Zapatillas Azules",
+            "precioUnitario": 30.33,
+            "quantity": 1
+        }
+    }
+}

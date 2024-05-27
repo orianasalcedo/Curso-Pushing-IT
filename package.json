@@ -1,0 +1,19 @@
+{
+  "name": "curso-cypress2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "npx cypress open --e2e -b chrome",
+    "qa": "npx cypress open --e2e -b chrome --config baseUrl=https://pushing-it.vercel.app",
+    "stage": "npx cypress open --e2e -b chrome --config baseUrl=https://pushing-front.vercel.app"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.7.2"
+  },
+  "dependencies": {
+    "cypress-xpath": "^2.0.1"
+  }
+}
