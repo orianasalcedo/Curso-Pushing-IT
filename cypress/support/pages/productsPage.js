@@ -19,15 +19,6 @@ export class ProductsPage {
     };
     
 
-    agregarTodosLosProductos() {
-        this.agregarproducto01();
-        this.cerrarModalProducto();
-        this.agregarproducto01();
-        this.cerrarModalProducto();
-        this.agregarproducto02();
-        this.cerrarModalProducto();
-        
-    };
 
 };
 

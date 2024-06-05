@@ -7,8 +7,6 @@ export class ShoppingCart{
         this.productoUnitPriceText = '#unitPrice';
         this.productoTotalPriceText = '#totalPrice';
         
-        
-
     }
 
 // Producto 01    
