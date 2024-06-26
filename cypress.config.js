@@ -11,7 +11,11 @@ module.exports = defineConfig({
   },
 
   env: {
-    usuario: 'pushingit',
-    contraseña: '123456!'
+    usuario: 'Oriana',
+    contraseña: '123456!',
+    gender : 'female',
+    day : '18',
+    month : 'september',
+    year : '1990',
   }
 });
