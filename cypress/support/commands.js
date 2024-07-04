@@ -4,7 +4,7 @@ import { expectedStatus1 } from '../../cypress/support/constants.js'
 Cypress.Commands.add('registerAPI', (usuario, contraseña, gender, day, month, year) => {
     cy.request({
         method: 'POST',
-        url: 'https://pushing-it.onrender.com/api/register',
+        url: 'https://pushing-it.onrender.com/api/register', 
         body: {
             "username": usuario,
             "password": contraseña,

@@ -3,7 +3,6 @@ export class Receipt{
     constructor() {
         this.nombreApellidoText = '#name';
         this.primerProductoText = 'p';
-        this.segundoProductoText = 'p';
         this.totalPriceText = '#totalPrice';
         
     }  
@@ -11,11 +10,8 @@ export class Receipt{
     verificarNombreApellido() {
         return cy.get(this.nombreApellidoText)
 }
-    verificarPrimerProducto() {
+    verificarProducto() {
     return cy.get(this.primerProductoText)
-}
-    verificarSegundoProducto() {
-    return cy.get(this.segundoProductoText)
 }
     verificarTotalPrice() {
     return cy.get(this.totalPriceText)

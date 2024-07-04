@@ -10,12 +10,12 @@ module.exports = defineConfig({
     defaultCommandTimeout: 15000,
   },
 
-  env: {
-    usuario: 'Oriana',
-    contraseña: '123456!',
-    gender : 'female',
-    day : '18',
-    month : 'september',
-    year : '1990',
-  }
+  // env: {
+  //   usuario: 'Oriana',
+  //   contraseña: '123456!',
+  //   gender : 'female',
+  //   day : '18',
+  //   month : 'september',
+  //   year : '1990',
+  // }
 });
