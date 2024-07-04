@@ -67,11 +67,11 @@ before(() => {
        
         //Elegir 2 productos a elección y añadirlos al carrito.
         
-        productsPage.agregarProducto('Buzo Negro');
+        productsPage.agregarProducto(EntregaFinal.DatosE2E.productos.primerProducto.nombre);
         productsPage.cerrarModalProducto();
-        productsPage.agregarProducto('Buzo Negro');
+        productsPage.agregarProducto(EntregaFinal.DatosE2E.productos.primerProducto.nombre);
         productsPage.cerrarModalProducto();
-        productsPage.agregarProducto('Zapatillas Azules');
+        productsPage.agregarProducto(EntregaFinal.DatosE2E.productos.segundoProducto.nombre);
         productsPage.cerrarModalProducto();
 
         // Verificar el nombre y precio de los dos productos.
