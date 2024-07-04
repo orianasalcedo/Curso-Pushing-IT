@@ -1,0 +1,31 @@
+{ "DatosE2E": {
+
+    "Auth": {
+        "contraseña": "123456!",
+        "gender" : "female",
+        "day" : "18",
+        "month" : "september",
+        "year" : "1990"
+      },
+
+    "productos": {
+        "primerProducto": {
+            "nombre": "Buzo Negro",
+            "precioUnitario": 23.76,
+            "quantity": 2
+        },
+        "segundoProducto": {
+            "nombre": "Zapatillas Azules",
+            "precioUnitario": 30.33,
+            "quantity": 1
+        }
+    },
+
+    "Datos": {
+        "Nombre": "Oriana",
+        "Apellido": "Salcedo",
+        "NumeroTarjeta": "4242424242424242"
+      }
+    }
+      
+}

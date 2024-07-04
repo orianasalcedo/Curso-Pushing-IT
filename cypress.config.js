@@ -10,8 +10,12 @@ module.exports = defineConfig({
     defaultCommandTimeout: 15000,
   },
 
-  env: {
-    usuario: 'pushingit',
-    contraseña: '123456!'
-  }
+  // env: {
+  //   usuario: 'Oriana',
+  //   contraseña: '123456!',
+  //   gender : 'female',
+  //   day : '18',
+  //   month : 'september',
+  //   year : '1990',
+  // }
 });

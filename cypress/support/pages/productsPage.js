@@ -1,24 +1,25 @@
+
 export class ProductsPage {
 
     constructor() {
-        this.producto01Button = '//button[@name="Buzo Negro"]';
         this.cerrarModalButton = '//button[@data-cy="closeModal"]';
-        this.producto02Button = '//button[@name="Zapatillas Azules"]';
+        this.productSelectors = {
+            'Buzo Negro': '//button[@name="Buzo Negro"]',
+            'Zapatillas Azules': '//button[@name="Zapatillas Azules"]'
+        };
     }
 
-    agregarproducto01() {
-        cy.xpath(this.producto01Button).click()
-    };
-   
-    agregarproducto02() {
-        cy.xpath(this.producto02Button).click();
-    };
+    // Cambiar el nombre del método a agregarProducto y aceptar un nombre de producto como argumento
+    agregarProducto(nombreProducto) {
+        const selector = this.productSelectors[nombreProducto];
+        if (selector) {
+            cy.xpath(selector).click();
+        } else {
+            throw new Error(`El producto "${nombreProducto}" no tiene un selector definido.`);
+        }
+    }
 
     cerrarModalProducto() {
         cy.xpath(this.cerrarModalButton).click();
-    };
-    
-
-
-};
-
+    }
+}
