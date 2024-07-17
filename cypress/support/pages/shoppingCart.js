@@ -1,8 +1,7 @@
 export class ShoppingCart{
 
     constructor() {
-        this.producto01NameText = '[name="Buzo Negro"]';
-        this.producto02NameText = '[name="Zapatillas Azules"]';
+        this.productoNameText = '#productName';
         this.productoQuantityText = '#productAmount';
         this.productoUnitPriceText = '#unitPrice';
         this.productoTotalPriceText = '#totalPrice';
@@ -11,48 +10,25 @@ export class ShoppingCart{
 
 // Producto 01    
 
-    devolverNameProducto01() {
-        cy.get(this.producto01NameText);
+    validarDatosProducto(producto) {
+        cy.get(`[name="${producto}"]`)
         
     };
 
-    verificarQuantityProducto01() {
-        return cy.get(this.producto01NameText)
+    verificarQuantityProducto(producto) {
+        return cy.get(`[name="${producto}"]`)
         .siblings(this.productoQuantityText)
         
     };
 
-    verificarUnitPriceProducto01() {
-        return cy.get(this.producto01NameText)
+    verificarUnitPriceProducto(producto) {
+        return cy.get(`[name="${producto}"]`)
         .siblings(this.productoUnitPriceText)
 
     }
-    verificarTotalPriceProducto01() {
-        return cy.get(this.producto01NameText)
-        .siblings(this.productoTotalPriceText)
 
-    }
-
-// Producto 02
-
-    devolverNameProducto02() {
-        cy.get(this.producto02NameText);
-        
-    };
-
-    verificarQuantityProducto02() {
-        return cy.get(this.producto02NameText)
-        .siblings(this.productoQuantityText)
-        
-    };
-
-    verificarUnitPriceProducto02() {
-        return cy.get(this.producto02NameText)
-        .siblings(this.productoUnitPriceText)
-
-    }
-    verificarTotalPriceProducto02() {
-        return cy.get(this.producto02NameText)
+    verificarTotalPriceProducto(producto) {
+        return cy.get(`[name="${producto}"]`)
         .siblings(this.productoTotalPriceText)
 
     }

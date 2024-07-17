@@ -68,26 +68,20 @@ before(() => {
         //Elegir 2 productos a elección y añadirlos al carrito.
         
         productsPage.agregarProducto(EntregaFinal.DatosE2E.productos.primerProducto.nombre);
-        productsPage.cerrarModalProducto();
-        productsPage.agregarProducto(EntregaFinal.DatosE2E.productos.primerProducto.nombre);
-        productsPage.cerrarModalProducto();
         productsPage.agregarProducto(EntregaFinal.DatosE2E.productos.segundoProducto.nombre);
-        productsPage.cerrarModalProducto();
 
         // Verificar el nombre y precio de los dos productos.
         cy.get('#goShoppingCart').click()
 
             //Validar los datos del producto 01
-        shoppingCart.devolverNameProducto01(EntregaFinal.DatosE2E.productos.primerProducto.nombre);
-        shoppingCart.verificarQuantityProducto01(EntregaFinal.DatosE2E.productos.primerProducto.quantity).should('have.text', EntregaFinal.DatosE2E.productos.primerProducto.quantity);
-        shoppingCart.verificarUnitPriceProducto01(EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario).should('have.text', `$${EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario}`);
-        shoppingCart.verificarTotalPriceProducto01().should('have.text', `$${EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario * EntregaFinal.DatosE2E.productos.primerProducto.quantity}`);
+        shoppingCart.verificarQuantityProducto(EntregaFinal.DatosE2E.productos.primerProducto.nombre).should('have.text',`${EntregaFinal.DatosE2E.productos.primerProducto.quantity}`);
+        shoppingCart.verificarUnitPriceProducto(EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario).should('have.text', `$${EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario}`);
+        shoppingCart.verificarTotalPriceProducto(EntregaFinal.DatosE2E.productos.primerProducto.nombre).should('have.text', `$${EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario * EntregaFinal.DatosE2E.productos.primerProducto.quantity}`);
 
             //Validar los datos del producto 02
-        shoppingCart.devolverNameProducto02(EntregaFinal.DatosE2E.productos.segundoProducto.nombre);
-        shoppingCart.verificarQuantityProducto02(EntregaFinal.DatosE2E.productos.segundoProducto.quantity).should('have.text', EntregaFinal.DatosE2E.productos.segundoProducto.quantity);
-        shoppingCart.verificarUnitPriceProducto02(EntregaFinal.DatosE2E.productos.segundoProducto.precioUnitario).should('have.text', `$${EntregaFinal.DatosE2E.productos.segundoProducto.precioUnitario}`);
-        shoppingCart.verificarTotalPriceProducto02().should('have.text', `$${EntregaFinal.DatosE2E.productos.segundoProducto.precioUnitario * EntregaFinal.DatosE2E.productos.segundoProducto.quantity}`);
+        shoppingCart.verificarQuantityProducto(EntregaFinal.DatosE2E.productos.segundoProducto.nombre).should('have.text', `${EntregaFinal.DatosE2E.productos.segundoProducto.quantity}`);
+        shoppingCart.verificarUnitPriceProducto(EntregaFinal.DatosE2E.productos.segundoProducto.nombre).should('have.text', `$${EntregaFinal.DatosE2E.productos.segundoProducto.precioUnitario}`)
+        shoppingCart.verificarTotalPriceProducto(EntregaFinal.DatosE2E.productos.segundoProducto.nombre).should('have.text', `$${EntregaFinal.DatosE2E.productos.segundoProducto.precioUnitario * EntregaFinal.DatosE2E.productos.segundoProducto.quantity}`);
 
         //Hacer click en "Show total price" y verificar el precio acumulado de los 2 productos.
         cy.get('button').contains('Show total price').click()
@@ -105,7 +99,7 @@ before(() => {
         //Verificar los siguientes datos en el ticket de compra (Nombre y apellido, productos,tarjeta de crédito, costo total)
 
         receipt.verificarNombreApellido().should('have.text', `${EntregaFinal.DatosE2E.Datos.Nombre} ${EntregaFinal.DatosE2E.Datos.Apellido} has succesfully purchased the following items:`);
-        receipt.verificarProducto().contains(`2 x ${EntregaFinal.DatosE2E.productos.primerProducto.nombre}`)
+        receipt.verificarProducto().contains(`1 x ${EntregaFinal.DatosE2E.productos.primerProducto.nombre}`)
         receipt.verificarProducto().contains(`1 x ${EntregaFinal.DatosE2E.productos.segundoProducto.nombre}`)
         receipt.verificarTotalPrice().should('have.text',`Monney spent $${EntregaFinal.DatosE2E.productos.primerProducto.precioUnitario * EntregaFinal.DatosE2E.productos.primerProducto.quantity + EntregaFinal.DatosE2E.productos.segundoProducto.precioUnitario * EntregaFinal.DatosE2E.productos.segundoProducto.quantity}`)
         
